@@ -24,3 +24,5 @@ raw_numbers = [
 sanitized_numbers = [normalize_phone(phone_number) for phone_number in raw_numbers]
 print("Нормалізовані номери телефонів для SMS-розсилки:", sanitized_numbers)
 
+
+
