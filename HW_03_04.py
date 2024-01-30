@@ -7,7 +7,7 @@ def get_upcoming_birthdays(users):
         bday = datetime.strptime(user["birthday"], "%Y.%m.%d").date() #  getting birthday dates by key "birthday"
         bday_this_year = datetime(today.year, bday.month, bday.day).date() # change birthday year to current year
         if 0<=(bday_this_year - today).days<7:
-            if datetime.weekday(bday_this_year) < 6:
+            if datetime.weekday(bday_this_year) < 5:
                birthdays.append({'name':user['name'], 'birthday':(datetime.strftime(bday_this_year,"%Y.%m.%d"))}) # Add to list
             else: 
                 if datetime.weekday(bday_this_year) == 5: # Saturday bday
@@ -20,6 +20,7 @@ def get_upcoming_birthdays(users):
 
 users = [
     {"name": "John Doe", "birthday": "1985.01.23"},
-    {"name": "Jane Smith", "birthday": "1990.01.27"}
+    {"name": "Jane Smith", "birthday": "1990.01.27"},
+     {'name': 'John Dark', 'birthday': '1985.02.03'}
 ]
 print(get_upcoming_birthdays(users))

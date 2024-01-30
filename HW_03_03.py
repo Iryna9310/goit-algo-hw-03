@@ -1,13 +1,13 @@
 import re
 
 def normalize_phone(phone_number):
-    p1=r"[\d\+]+" #pattern, digitals and plus
-    phone_number=''.join(re.findall(p1,phone_number)) #search of pattern and join to string
-    if phone_number[0] == "3":
-       phone_number="+" + phone_number #add + in the beginning of number
-    elif phone_number[0] == "0":
-         phone_number = "+38" + phone_number #add (+38) in the beginning of number
-    return phone_number #return number without change
+    p1=r"[\d\+]+"
+    phone_number=''.join(re.findall(p1,phone_number))
+    if len(phone_number)==10:
+        phone_number='+38'+phone_number
+    elif len(phone_number)==12:
+        phone_number='+'+phone_number
+    return phone_number
 
 raw_numbers = [
     "067\\t123 4567",
